@@ -10,6 +10,9 @@ class Student extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $guarded = [];
+
+    // create a one to one relationship with contact Model
     public function contact(){
         return $this->hasOne(Contact::class);
     }

@@ -22,7 +22,20 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        // it create a data of both Student and Contact model
+        $students = Student::create([
+            'name' => 'Honey Singh',
+            'age' => 26,
+            'gender' => 'Male'
+
+        ]);
+        // contact() name came from the Student.php model where we mention a function contact
+        $students->contact()->create([
+            'email' => 'honey@gmail.com',
+            'phone' => '1234567890',
+            'address' => 'Delhi',
+            'city' => 'New Delhi',
+        ]);
     }
 
     /**
